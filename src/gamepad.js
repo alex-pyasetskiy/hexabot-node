@@ -13,7 +13,7 @@ usbDetect.find(GAMEPAD_VENDOR_ID, GAMEPAD_PRODUCT_ID, function(err, devices) {
     const deviceInfo = devices[0];
 
     if( deviceInfo ) {
-        var device = new HID.HID( deviceInfo.vendorId, deviceInfo.productId );
+        var device = new HID.HID( Number(deviceInfo.vendorId), Number(deviceInfo.productId) );
 
         device.on("data", function(bytes) {
             const hex = bytes.toString("hex");

@@ -1,8 +1,10 @@
 const HID = require('node-hid');
-var usbDetect = require('usb-detection');
-usbDetect.startMonitoring();
+const EventEmitter = require('events');
+const usbDetect = require('usb-detection');
 
 const { GAMEPAD_VENDOR_ID, GAMEPAD_PRODUCT_ID } = require('./configs')
+
+usbDetect.startMonitoring();
 
 const GamepadEmitter = new EventEmitter();
 

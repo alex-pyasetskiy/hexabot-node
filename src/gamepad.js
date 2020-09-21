@@ -14,7 +14,7 @@ const GamepadEmitter = new EventEmitter();
 
 if( deviceInfo ) {
     var device = new HID.HID( deviceInfo.path );
-
+    console.log(deviceInfo);
     device.on("data", function(bytes) {
         const hex = bytes.toString("hex");
         GamepadEmitter.emit('START_BACK', hex.slice(4,5));

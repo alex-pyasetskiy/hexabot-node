@@ -18,9 +18,7 @@
     "websocket": "^1.0.31"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "gamepad": "node src/gamepad.js",
-    "test": "jest --config=jest.config.js"
+    "start": "node src/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"

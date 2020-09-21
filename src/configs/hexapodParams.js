@@ -69,7 +69,7 @@ const DEFAULT_GAIT_PARAMS = {
     hipStance: 0,
     hipSwing: 15,
     liftSwing: 40,
-    stepCount: 2,
+    stepCount: 5,
     animationDelay: 250,
 }
 

@@ -1,5 +1,8 @@
 const HID = require('node-hid');
 
+var monitor = require('node-usb-detection');
+console.log("Usb Devices:\n", monitor.list());
+
 const EventEmitter = require('events');
 
 const { GAMEPAD_VENDOR_ID, GAMEPAD_PRODUCT_ID } = require('./configs')
@@ -7,7 +10,7 @@ const { GAMEPAD_VENDOR_ID, GAMEPAD_PRODUCT_ID } = require('./configs')
 const devices = HID.devices();
 
 const deviceInfo = devices.find( function(d) {
-    return d.vendorId===GAMEPAD_VENDOR_ID && d.productId===GAMEPAD_PRODUCT_ID;
+    return d.idVendor===GAMEPAD_VENDOR_ID && d.idProduct===GAMEPAD_PRODUCT_ID;
 });
 
 const GamepadEmitter = new EventEmitter();
